@@ -1,0 +1,91 @@
+#main {
+    min-height: 300px;
+    width: 100%;
+    background: lightgray;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px auto auto;
+    grid-template-areas: 
+        "header header header"
+        "subtitle subtitle subtitle"
+        "photo photo photo"
+        "content content content";
+}
+
+#title {
+    grid-area: header;
+    flex-wrap: wrap;
+    justify-self: center;
+}
+
+#subtitle {
+    grid-area: subtitle;
+    flex-wrap: wrap;
+    justify-self: center;
+}
+
+#img-div {
+    width: 95%;
+    background: white;
+    grid-area: photo;
+    justify-self: center;
+    flex-wrap: wrap;
+    display: grid;
+}
+
+#image {
+    width: 60%;
+    justify-self: center;
+}
+
+#img-caption {
+    margin: 10px;
+    font-size: 14px;
+    justify-self: center;
+    flex-wrap: wrap;
+}
+
+#tribute-info {
+    grid-area: content;
+    width: 65%;
+    justify-self: center;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "title title title"
+        "list list list"
+        "cite cite cite"
+        "wiki wiki wiki";
+}
+
+#headline {
+    grid-area: title;
+    justify-self: center;
+}
+
+#ul li {
+    grid-area: list;
+    justify-self: center;
+    flex-wrap: wrap;
+}
+
+li {
+    margin: 15px;
+}
+
+blockquote {
+    grid-area: cite;
+    justify-self: center;
+    flex-wrap: wrap;
+}
+
+p {
+    font-style: italic;
+}
+
+#link {
+    grid-area: wiki;
+    justify-self: center;
+}
