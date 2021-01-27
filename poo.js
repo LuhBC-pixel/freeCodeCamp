@@ -76,3 +76,12 @@ glideMixin(boat);
 
 bird.glide();
 boat.glide();
+
+// Criar atributos privados 
+function Bird() {
+    let weight = 15;
+
+    this.getWeight = function() {
+        return weight;
+    };
+}
