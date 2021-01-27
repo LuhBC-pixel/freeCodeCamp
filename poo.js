@@ -23,7 +23,7 @@ function joinDogFraternity(candidate) {
     }
 }
 
-Dog.prototype = {
+Dog.prototype = {  // Herança - Dog - classe filha
     constructor: Dog,
     eat: function() {
         console.log('au au');
@@ -38,3 +38,14 @@ let beagle = new Dog('Snoopy');
 Dog.prototype.isPrototypeOf(beagle); // return true
 
 Object.prototype.isPrototypeOf(Dog.prototype);
+
+function Animal() { } // Herança - Animal - classe Mãe
+
+Animal.prototype = {
+    constructor: Animal,
+    eat: function() {
+        console.log('nom nom nom');
+    }
+};
+
+Dog.prototype = Object.create(Animal.prototype);
