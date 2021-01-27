@@ -1,27 +1,27 @@
-function Dog(name) {
-    this.name = name;
-}
+// function Dog(name) {
+//     this.name = name;
+// }
 
-Dog.prototype.numLegs = 4;
+// Dog.prototype.numLegs = 4;
 
-let ownProps = [];
-let prototypeProps = [];
+// let ownProps = [];
+// let prototypeProps = [];
 
-for (let property in beagle) {
-    if (Dog.hasOwnProperty(property)) {
-        ownProps.push(property);
-    } else {
-        prototypeProps.push(property);
-    }
-}
+// for (let property in beagle) {
+//     if (Dog.hasOwnProperty(property)) {
+//         ownProps.push(property);
+//     } else {
+//         prototypeProps.push(property);
+//     }
+// }
 
-function joinDogFraternity(candidate) {
-    if (candidate.constructor === Dog) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function joinDogFraternity(candidate) {
+//     if (candidate.constructor === Dog) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
 // Dog.prototype = {  // Herança - Dog - classe filha
 //     constructor: Dog,
@@ -33,24 +33,46 @@ function joinDogFraternity(candidate) {
 //     }
 // }
 
-let beagle = new Dog('Snoopy');
+// let beagle = new Dog('Snoopy');
 
-Dog.prototype.isPrototypeOf(beagle); // return true
+// Dog.prototype.isPrototypeOf(beagle); // return true
 
-Object.prototype.isPrototypeOf(Dog.prototype);
+// Object.prototype.isPrototypeOf(Dog.prototype);
 
-function Animal() { } // Herança - Animal - classe Mãe
+// function Animal() { } // Herança - Animal - classe Mãe
 
-Animal.prototype = {
-    constructor: Animal,
-    eat: function() {
-        console.log('nom nom nom');
+// Animal.prototype = {
+//     constructor: Animal,
+//     eat: function() {
+//         console.log('nom nom nom');
+//     }
+// };
+
+// Dog.prototype = Object.create(Animal.prototype);
+// Dog.prototype.constructor = Dog;
+
+// Dog.prototype.bark = function() {
+//     console.log('Woof!');
+// }
+
+let bird = {
+    name: 'Donald',
+    numLegs: 2
+};
+
+let boat = {
+    name: 'Warrior',
+    type: 'race-boat'
+};
+
+let glideMixin = function(obj) {
+    obj.glide = function() {
+        console.log('Flying, wooosh!');
     }
 };
 
-Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.constructor = Dog;
+glideMixin(bird);
+glideMixin(boat);
 
-Dog.prototype.bark = function() {
-    console.log('Woof!');
-}
+bird.glide();
+boat.glide();
