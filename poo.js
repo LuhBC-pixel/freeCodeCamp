@@ -77,6 +77,24 @@ glideMixin(boat);
 bird.glide();
 boat.glide();
 
+let funModule = (function() {
+    return {
+        isCuteMixin: function(obj) {
+            obj.isCute = function() {
+                return true;
+            };
+        },
+        singMixin: function(obj) {
+            obj.sing = function() {
+                console.log('Singing to an awesome tune');
+            };
+        }
+    }
+})();
+
+funModule.singMixin(bird);
+bird.sing();
+
 // Criar atributos privados 
 function Bird() {
     let weight = 15;
