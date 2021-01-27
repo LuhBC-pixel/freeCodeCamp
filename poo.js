@@ -23,15 +23,15 @@ function joinDogFraternity(candidate) {
     }
 }
 
-Dog.prototype = {  // Herança - Dog - classe filha
-    constructor: Dog,
-    eat: function() {
-        console.log('au au');
-    },
-    describe: function() {
-        console.log('My name is ' + this.name);
-    }
-}
+// Dog.prototype = {  // Herança - Dog - classe filha
+//     constructor: Dog,
+//     eat: function() {
+//         console.log('au au');
+//     },
+//     describe: function() {
+//         console.log('My name is ' + this.name);
+//     }
+// }
 
 let beagle = new Dog('Snoopy');
 
@@ -49,3 +49,8 @@ Animal.prototype = {
 };
 
 Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function() {
+    console.log('Woof!');
+}
