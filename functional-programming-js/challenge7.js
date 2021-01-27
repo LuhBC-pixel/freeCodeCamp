@@ -113,7 +113,7 @@ var watchList = [
 ];
 
 const ratings = watchList.map(movie => {
-    return { title: movie.Title, rating: movie.imdbRating};
+    return { title: movie.Title, rating: movie.imdbRating };
 });
 
 console.log(JSON.stringify(ratings));
