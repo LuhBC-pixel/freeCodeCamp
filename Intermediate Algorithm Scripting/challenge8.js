@@ -1,21 +1,13 @@
 function pairElement(str) {
     const arr = str.split('');
-    let array = [];
-    
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === 'C') {
-            array.push([arr[i], 'G']);
-
-        } else if (arr[i] === 'G') {
-            array.push([arr[i], 'C']);
-
-        } else if (arr[i] === 'A') {
-            array.push([arr[i], 'T']);
-
-        } else {
-            array.push([arr[i], 'A']);
-        }
+    const objDNA = {
+        A: 'T',
+        T: 'A',
+        G: 'C',
+        C: 'G'
     }
+
+    let array = arr.map(elem => [elem, objDNA[elem]]);
 
     return array;
 }
