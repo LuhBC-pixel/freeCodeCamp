@@ -12,9 +12,9 @@ function smallestCommons(arr) {
     let n;
 
     do {
-        quot = array[0] * loop + array[1];
+        quot = array[0] * loop * array[1];
         for (n = 2; n < array.length; n++) {
-            if (quot % array[n] === 0) {
+            if (quot % array[n] !== 0) {
                 break;
             }
         }
@@ -22,7 +22,6 @@ function smallestCommons(arr) {
         loop++;
     } while (n !== array.length);
 
-    console.log(quot)
     return quot;
 }
 
